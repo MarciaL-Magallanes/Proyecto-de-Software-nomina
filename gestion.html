@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestión de Empleados</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/gestion.css">
+  <link rel="stylesheet" href="css/Normalice.css">
+  <link href="https://fonts.googleapis.com/css2? family=Krub:wght@400;700&display=swap">
+  <link rel="icon" href="./img/solucion.jpeg">
+</head>
+<body>
+
+  <header>
+     <h1>Gestión de Empleados</h1>
+  </header>
+
+  <div class="nav-bg">
+  <nav class="navegacion-principal contenedor">
+    <a href="calculodenomina.html">Calculo y Generacion de nomina</a>
+    
+  </nav>
+</div>
+<div>
+  <h1>Bienvenido al Sistema </h1>
+<a class="boton" href="Login.html">salir</a>
+
+</div>
+
+  <section >
+    <h2>Agregar Empleado</h2>
+    <form class="formulario" action="gestion_empleados.php" method="post" ">
+      <label for="Documentoid">Documento:</label>
+      <input type="number" name="Documentoid" id="Documentoid" placeholder="El documento ">
+
+      <label for="NombreEmpleado">Nombre:</label>
+      <input type="text" id="NombreEmpleado" name="NombreEmpleado" placeholder="El Nombre">
+
+      <label for="ApellidoEmpleado ">Apellido:</label>
+      <input type="text" id="ApellidoEmpleado" name="ApellidoEmpleado" placeholder="El Apellido">
+
+      <label for="Telefono">Telefono:</label>
+      <input type="number" id="Telefono" name="Telefono" placeholder="El Telefono">
+
+      <label for="Direccion">Direccion:</label>
+      <input type="text" id="Direccion" name="Direccion" placeholder="La Direccion">
+
+      <label for="Email">Email:</label>
+      <input type="text" id="Email" name="Email" placeholder="El Email">
+
+      <br><input class="boton" type="submit" value="Ingresar" >
+      
+    </form>
+  <br></section><br>
+
+
+
+  <h2>Contrato</h2>
+   <form action="gestion_contrato.php" method="post" class="formulario">
+    <label for="Nombre">Nombre del Empleado:</label>
+    <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese el Nombre " required>
+
+    <label for=" Fecha_inicio">Fecha De Inicio:</label>
+    <input type="text"  id="Fecha_inicio" name="Fecha_inicio" placeholder="Ingrese la fecha de inicio" required>
+
+    <label for="Fecha_fin">Fecha Fin:</label>
+    <input type="text" id="Fecha_fin" name="Fecha_fin" placeholder="Ingrese la fecha Fin" required>
+
+    <label for="Salario_basico">Salario Basico:</label> 
+    <input type="text" id="Salario_basico" name="Salario_basico" placeholder="El Salario basico" required><br>
+
+    <br><input class="boton" type="submit" value="Ingresar" >
+     
+<br></form><br><br>
+
+
+  
+    <h2>Cargo</h2>
+   <form action="gestion_cargo.php" method="post" class="formulario">
+    <label for="Nombre">Nombre del Empleado:</label>
+    <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese el Nombre " required>
+
+    <label for="Nombre_cargo">Nombre del Cargo :</label>
+    <input type="text" name="Nombre_cargo" id="Nombre_cargo" placeholder="Ingrese el Cargo " required>
+
+    <label for="Salario_base">Salario Base:</label>
+    <input type="text" id="Salario_base" name="Salario_base" placeholder="Ingrese El salario" required>
+
+    <label for="Horario_trabajo">Horario:</label> 
+    <input type="text" id="Horario_trabajo" name="Horario_trabajo" placeholder="Ingrese el Horario" required>
+
+    <label for="Experiencia_minima">Experiencia Minima:</label> 
+    <textarea name="Experiencia_minima" id="Experiencia_minima" cols="34" rows="4"></textarea>
+    <br>
+    <br><input class="boton" type="submit" value="Ingresar" ><br> 
+</form><br><br>
+
+
+<h2>Area</h2>
+   <form action="gestion_area.php" method="post" class="formulario">
+    <label for="Nombre">Nombre del Empleado:</label>
+    <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese el Nombre " required>
+
+    <label for="nombrearea">Nombre del Area:</label>
+    <input type="text" name="nombrearea" id="nombrearea" placeholder="Ingrese el Area " required>
+    <br><input class="boton" type="submit" value="Ingresar" ><br> 
+    
+</form>
+
+
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>

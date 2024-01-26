@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Realización de Pago de Nómina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/calculodenomina.css">
+  <link href="https://fonts.googleapis.com/css2? family=Krub:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/Normalice.css">
+  <script src="calculodenomina.js"></script>
+  <link rel="icon" href="./img/cumplimiento de nomina.jpg">
+</head>
+
+<body>
+  <header>
+    <h1>Detalles de la Nomina mensual del Empleado</h1>
+  </header>
+
+
+  <div class="nav-bg">
+  <nav class="navegacion-principal contenedor">
+    <a href="gestion.html">Gestion de Empleados</a>
+    </nav>
+  </div>
+
+  <h2>Cálculo de la nomina</h2>
+
+  <form class="formulario">
+    <label for="nombre">Nombre del Empleado:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="salarioBase">Salario Base:</label>
+    <input type="number" id="salarioBase" name="salarioBase" min="0" required>
+
+    <label for="deducciones">Deducciones:</label>
+    <input type="number" id="deducciones" name="deducciones" min="0" required>
+
+    <label for="otrosIngresos">Otros Ingresos:</label>
+    <input type="number" id="otrosIngresos" name="otrosIngresos" min="0" required>
+
+    <button type="button" class="boton"  onclick="calcularNomina()">Calcular Nómina</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script >
+    function calcularNomina() {
+      // Obtener los valores del formulario
+      var nombre = document.getElementById('nombre').value;
+      var salarioBase = parseFloat(document.getElementById('salarioBase').value);
+      var deducciones = parseFloat(document.getElementById('deducciones').value);
+      var otrosIngresos = parseFloat(document.getElementById('otrosIngresos').value);
+
+      // Realizar el cálculo de la nómina
+      var totalNomina = salarioBase - deducciones + otrosIngresos;
+
+      // Mostrar el resultado
+      var resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.innerHTML = '<h3>Resultado del Cálculo:</h3>' +
+        '<p>Nombre: ' + nombre + '</p>' +
+        '<p>Salario Base: $' + salarioBase.toFixed(2) + '</p>' +
+        '<p>Deducciones: $' + deducciones.toFixed(2) + '</p>' +
+        '<p>Otros Ingresos: $' + otrosIngresos.toFixed(2) + '</p>' +
+        '<p>Total Nómina: $' + totalNomina.toFixed(2) + '</p>';
+    }
+</script><br><br><br>
+
+
+<h2>Registro y Generacion de Nómina</h2>
+
+<form class="formulario" action="calculodenomina.php" method="POST">
+
+  
+  <label for="nombre_empleado">Nombre del Empleado:</label>
+  <input type="text" id="nombre_empleado" name="nombre_empleado" required>
+
+  <label for="mes">Mes:</label>
+  <input type="text" id="mes" name="mes" required>
+
+  <label for="ano">Año:</label>
+  <input type="number" id="ano" name="ano" required>
+
+  <label for="cedula">Documento:</label>
+  <input type="text" id="cedula" name="cedula" required>
+
+  <label for="monto_salario">Monto del Salario:</label>
+  <input type="number" id="monto_salario" name="monto_salario" required>
+
+  <label for="fecha_pago">Fecha de Pago:</label>
+  <input type="date" id="fecha_pago" name="fecha_pago" required>
+
+  
+  <label for="metodo_pago">Método de Pago:</label>
+  <select id="metodo_pago" name="metodo_pago" required>
+    <option value="transferencia">Transferencia Bancaria</option>
+    <option value="cheque">Cheque</option>
+    <option value="efectivo">Efectivo</option>
+  </select>
+
+  <label for="comentarios">Comentarios:</label>
+  <textarea id="comentarios" name="comentarios"  cols="31" rows="4"></textarea>
+
+  
+  <input class="boton" type="submit" value="Procesar" >
+  
+</form>
+<main>
+</body>
+</html>
